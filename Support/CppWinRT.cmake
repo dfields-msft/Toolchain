@@ -157,7 +157,7 @@ function(add_cppwinrt_projection TARGET_NAME)
     # Build the command to generate the projection
     set(CPPWINRT_OUTPUT ${CPPWINRT_PROJECTION_ROOT_PATH}/${TARGET_NAME})
     set(CPPWINRT_OUTPUT_FILE ${CPPWINRT_OUTPUT}/output.log)
-    set(CPPWINRT_EXECUTABLE_PATH ${NUGET_MICROSOFT_WINDOWS_CPPWINRT}/bin/cppwinrt.exe)
+    set(CPPWINRT_EXECUTABLE_PATH ${PROJECT_SOURCE_DIR}/tools/cppwinrt.exe) #${NUGET_MICROSOFT_WINDOWS_CPPWINRT}/bin/cppwinrt.exe)
 
     set(CPPWINRT_COMMAND)
     list(APPEND CPPWINRT_COMMAND ${CPPWINRT_EXECUTABLE_PATH})
@@ -169,7 +169,7 @@ function(add_cppwinrt_projection TARGET_NAME)
         list(APPEND CPPWINRT_COMMAND -optimize)
     endif()
 
-    list(APPEND CPPWINRT_COMMAND > ${CPPWINRT_OUTPUT_FILE})
+    #list(APPEND CPPWINRT_COMMAND > ${CPPWINRT_OUTPUT_FILE})
 
     # Check 'CPPWINRT_INPUTS', if the items are none of:
     #   * local
